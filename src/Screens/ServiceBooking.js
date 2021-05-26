@@ -28,7 +28,8 @@ const ServiceBooking = ({navigation}) => {
         <View style={{flexDirection: 'row', top: -10}}>
           <TouchableOpacity
             style={{paddingLeft: 20, top: 7}}
-            o nPress={() => navigation.goBack(null)}>
+            onPress={() => navigation.goBack(null)}
+            >
             <AntDesign name="left" size={20} color="white"></AntDesign>
           </TouchableOpacity>
           <Image
@@ -69,7 +70,7 @@ const ServiceBooking = ({navigation}) => {
         <Text style={styles.text3}>02 April 2020</Text>
         <Text style={styles.text4}>between</Text>
         <Text style={styles.text5}>10 AM to 11 AM</Text>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={() => {navigation.navigate('MyBookings1');}}>
           <Text style={{color: Colors.secondaryText, fontWeight: '700'}}>
             Review Booking
           </Text>

@@ -61,7 +61,7 @@ const Shedule = ({navigation}) => {
   const [scolor, ssetcolor] = useState(styles.button1);
   const [color1, setcolor1] = useState(styles.button2);
   const [scolor1, ssetcolor1] = useState(styles.button2);
-  const [color2, setcolor2] = useState(styles.button2);
+  const [color2, setcolor2] = useState(styles.button5);
   const [txtcolor, settextcolor] = useState(styles.timeTxt);
   const [stxtcolor, ssettextcolor] = useState(styles.timeTxt);
   const [txtcolor1, settextcolor1] = useState(styles.timeTxt2);
@@ -266,7 +266,7 @@ const Shedule = ({navigation}) => {
             <Text style={txtcolor1}>2pm-3pm</Text>
           </TouchableOpacity>
         </View>
-        <View style={{height: 20,width:20}} />
+        <View style={{height: 20,width:20,}} />
         <TouchableOpacity
           style={color2}
           onPress={() => {
@@ -370,6 +370,18 @@ const Shedule = ({navigation}) => {
 export default Shedule;
 const styles = StyleSheet.create({
   button1: {
+    backgroundColor: Colors.backgroundcolor,
+    width: '25%',
+    height: 30,
+    borderWidth: 1,
+    borderColor: Colors.primarycolor,
+    borderRadius: 6,
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    top: 10,
+    left: 10,
+  },
+  button5: {
     backgroundColor: Colors.backgroundcolor,
     width: '25%',
     height: 30,

@@ -27,6 +27,8 @@ import ServiceBooking from '../Screens/ServiceBooking';
 
 import Addaddress from '../components/Addaddress'
 
+import MyBookings1 from '../Screens/Mybookings'
+
 import Intro from '../Screens/Intoslider';
 
 const Stack = createStackNavigator();
@@ -60,6 +62,10 @@ export default HomeNavigations = () => {
 
 
       <Stack.Screen name="Addaddress" component={Addaddress} />
+      <Stack.Screen name='MyBookings1' component={MyBookings1} />
+
+
+
 
       {/* <Stack.Screen name="Intro" component={Intro}  /> */}
 
