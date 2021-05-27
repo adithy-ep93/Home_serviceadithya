@@ -168,9 +168,9 @@ const HomeSanitization = ({route, navigation}) => {
             <Text style={styles.text3}>Featccncncn cncjnj slvhnfvskak</Text>
           </View>
 
-          <View style={{ marginTop: '2%',flexDirection:'row'}}>
+          <View style={{ marginTop: '2%',flexDirection:'row',justifyContent:'space-between',marginRight:'4%',}}>
             <Text style={styles.text1}>Size of house:</Text>
-            <View style={{margin: '2%'}}>
+            <View style={{marginLeft: '0%'}}>
             <DropDownPicker
                 open={open}
                 items={items}
@@ -190,7 +190,7 @@ const HomeSanitization = ({route, navigation}) => {
                 dropDownStyle={{backgroundColor: '#fafafa'}}
                 placeholder="Select size of your house/Apartment"
                 placeholderStyle={{fontWeight: 'bold', textAlign: 'auto'}}
-                containerStyle={{width: 240, height: 38,left:'2%',bottom:'2%'}}
+                containerStyle={{width: 220, height: 38,left:'2%',bottom:'2%'}}
                 style={{backgroundColor: 'white'}}
                 itemStyle={{
                   justifyContent: 'flex-start',

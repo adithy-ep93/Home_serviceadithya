@@ -71,27 +71,39 @@ const Servicesub = ({route,navigation}) => {
   const onChangeSearch = query => setSearchQuery(query);
   return (
     <View style={{flex: 1, backgroundColor: Colors.backgroundcolor}}>
-      
-        <View style={styles.header}>
-          <TouchableOpacity
-            style={{bottom: 5, left: 20}}
-            onPress={() => navigation.goBack()}>
-            <AntDesign
-              style={styles.iconItem}
-              name="left"
-              size={20}
-              color={Colors.backgroundcolor}
-            />
-          </TouchableOpacity>
-
-          <View style={{width: 148, height: 47, left:'100%'}}>
-            <Image
-              style={{ width: 45, height: 45, tintColor: '#fff'}}
-              source={require('../Assets/Images/Home.png')}
-            />
-          </View>
-          <Text style={styles.text}>HOME SERVE</Text>
+      <View style={styles.header}>
+        <TouchableOpacity
+          style={{bottom: 5, left: 20}}
+          onPress={() => navigation.goBack()}>
+          <AntDesign
+            style={styles.iconItem}
+            name="left"
+            size={20}
+            color={Colors.backgroundcolor}
+          />
+        </TouchableOpacity>
+        <View
+          style={{
+            flexDirection: 'row',
+            flex: 1,
+            alignContent: 'center',
+            justifyContent: 'center',
+            top: 8,
+            right:'3%'
+          }}>
+          <Image
+            source={require('../Assets/appbar.png')}
+            style={{
+              tintColor: '#fff',
+              height: 45,
+              width: 45,
+            }}
+          />
+          <Text style={{color: '#fff', top: 11, fontWeight: 'bold', left: 5}}>
+            HOME SERVE
+          </Text>
         </View>
+      </View>
         <View style={{backgroundColor: Colors.primarycolor}}>
           <Searchbar
             style={styles.searchStyle}

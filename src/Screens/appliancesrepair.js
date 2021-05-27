@@ -13,24 +13,39 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import Colors from '../config/colors';
 export default Appliancesrepair = ({navigation}) => {
   return (
-    <View style={{backgroundColor: Colors.backgroundcolor}}>
-      <View style={styles.header}>
-        <View style={{flexDirection: 'row'}}>
-          <TouchableOpacity style={{paddingLeft: 20, top: 7}}>
-            <AntDesign
-              name="left"
-              size={20}
-              color={Colors.backgroundcolor}
-              onPress={() => navigation.goBack(null)}
-              ></AntDesign>
-          </TouchableOpacity>
-          <Image
-            source={require('../Assets/appbar.png')}
-            style={styles.image}
-          />
-          <Text style={styles.text1}> HOME SERVE </Text>
-        </View>
+    <View style={{flex: 1, backgroundColor: Colors.backgroundcolor}}>
+    <View style={styles.header}>
+      <TouchableOpacity
+        style={{bottom: 5, left: 20}}
+        onPress={() => navigation.goBack()}>
+        <AntDesign
+          style={styles.iconItem}
+          name="left"
+          size={20}
+          color={Colors.backgroundcolor}
+        />
+      </TouchableOpacity>
+      <View
+        style={{
+          flexDirection: 'row',
+          flex: 1,
+          alignContent: 'center',
+          justifyContent: 'center',
+          top: 8,
+        }}>
+        <Image
+          source={require('../Assets/appbar.png')}
+          style={{
+            tintColor: '#fff',
+            height: 45,
+            width: 45,
+          }}
+        />
+        <Text style={{color: '#fff', top: 11, fontWeight: 'bold', left: 6}}>
+          HOME SERVE
+        </Text>
       </View>
+    </View>
 
       <View
         style={{
@@ -49,19 +64,22 @@ export default Appliancesrepair = ({navigation}) => {
 
         <View style={styles.mainView}>
           <Image
-            style={{width: 320, left: 20, top: 10, borderRadius: 10}}
+            style={{borderRadius:16,justifyContent:'space-evenly',width:'96%',alignContent:'center',top:'3%',left:'1.9%'}}
             source={require('../Assets/appliancerepair/main.png')}
           />
-          <Text
-            style={{
-              color: Colors.backgroundcolor,
-              bottom: 50,
-              fontSize: 22,
-              fontWeight: 'bold',
-              alignSelf:'center'
-            }}>
-            Appliances Repair
-          </Text>
+         <Text
+              style={{
+                fontWeight: 'bold',
+                color: '#FFFFFF',
+                fontSize: 19,
+                textAlign:'center',
+                bottom:'17%',
+               
+                alignContent: 'center',
+                justifyContent: 'center',
+              }}>
+              Appliances Repair
+            </Text>
         </View>
 
         <View style={{left: '4%', right: '4%', top: 15, height: 90}}>
@@ -89,6 +107,11 @@ export default Appliancesrepair = ({navigation}) => {
             </Text>
           </TouchableOpacity>
         </View>
+
+
+
+
+        
         <View style={{top: 15, height: 400}}>
           {/* firsr row */}
           <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
@@ -188,7 +211,7 @@ const styles = StyleSheet.create({
   mainView: {
     backgroundColor: Colors.primarycolor,
     width: '100%',
-    height: 240,
+    height:'30.5%',
     borderBottomLeftRadius: 15,
     borderBottomRightRadius: 15,
   },

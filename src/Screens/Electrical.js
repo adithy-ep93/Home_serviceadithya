@@ -18,36 +18,39 @@ import Colors from '../config/colors';
 
 export default ele = ({navigation}) => {
   return (
-    <View style={{backgroundColor: Colors.backgroundcolor}}>
-      <View style={styles.header}>
-        <View style={{flexDirection: 'row'}}>
-          <TouchableOpacity
-            style={{paddingLeft: 20, top: 7}}
-            onPress={() => navigation.goBack(null)}>
-            <AntDesign name="left" size={20} color="white"></AntDesign>
-          </TouchableOpacity>
-          <Image
-            source={require('../Assets/appbar.png')}
-            style={{
-              height: 45,
-              width: 45,
-              tintColor: Colors.backgroundcolor,
-              left: 80,
-              top: 4,
-            }}
-          />
-          <Text
-            style={{
-              fontSize: 15,
-              color: Colors.backgroundcolor,
-              fontWeight: 'bold',
-              left: 81,
-              top: 14,
-            }}>
-            HOME SERVE
-          </Text>
-        </View>
+    <View style={{flex: 1, backgroundColor: Colors.backgroundcolor}}>
+    <View style={styles.header}>
+      <TouchableOpacity
+        style={{bottom: 5, left: 20}}
+        onPress={() => navigation.goBack()}>
+        <AntDesign
+          style={styles.iconItem}
+          name="left"
+          size={20}
+          color={Colors.backgroundcolor}
+        />
+      </TouchableOpacity>
+      <View
+        style={{
+          flexDirection: 'row',
+          flex: 1,
+          alignContent: 'center',
+          justifyContent: 'center',
+          top: 8,
+        }}>
+        <Image
+          source={require('../Assets/appbar.png')}
+          style={{
+            tintColor: '#fff',
+            height: 45,
+            width: 45,
+          }}
+        />
+        <Text style={{color: '#fff', top: 11, fontWeight: 'bold', left: 6}}>
+          HOME SERVE
+        </Text>
       </View>
+    </View>
       <View
         style={{
           backgroundColor: Colors.primarycolor,
@@ -65,31 +68,30 @@ export default ele = ({navigation}) => {
           style={{
             backgroundColor: Colors.primarycolor,
             width: '100%',
-            height: 240,
+            height: '24.5%',
+            
             borderBottomLeftRadius: 15,
             borderBottomRightRadius: 15,
           }}>
           <Image
             source={require('../Assets/elew.png')}
             style={{
-              left: '4%',
-              right: '4%',
-              top: 5,
-              position: 'absolute',
-              width: '92%',
-              borderRadius: 10,
+              borderRadius:16,justifyContent:'space-evenly',width:'97%',alignContent:'center',left:'1.5%',top:'3%'
             }}
           />
           <Text
-            style={{
-              fontWeight: 'bold',
-              color: Colors.backgroundcolor,
-              fontSize: 22,
-              left: 123,
-              top: 160,
-            }}>
-            Electrical works
-          </Text>
+              style={{
+                fontWeight: 'bold',
+                color: '#FFFFFF',
+                fontSize: 18,
+                textAlign:'center',
+                bottom:'15%',
+               
+                alignContent: 'center',
+                justifyContent: 'center',
+              }}>
+              Electrical Works
+            </Text>
         </View>
         <View style={{left: '4%', right: '4%', top: 15, height: 90}}>
           <TouchableOpacity
@@ -252,7 +254,7 @@ export default ele = ({navigation}) => {
                   <Card.Content>
                     <Title
                       style={{color: Colors.primarycolor, fontWeight: 'bold'}}>
-                      1
+                      1&nbsp;
                       <Text style={{fontSize: 12, fontWeight: 'normal'}}>
                         Doorstep Service
                       </Text>
@@ -271,7 +273,7 @@ export default ele = ({navigation}) => {
                   <Card.Content>
                     <Title
                       style={{color: Colors.primarycolor, fontWeight: 'bold'}}>
-                      2
+                      2&nbsp;
                       <Text style={{fontSize: 12, fontWeight: 'normal'}}>
                         Experienced, trained, and Background verified Partners
                       </Text>
@@ -290,7 +292,7 @@ export default ele = ({navigation}) => {
                   <Card.Content>
                     <Title
                       style={{color: Colors.primarycolor, fontWeight: 'bold'}}>
-                      3
+                      3&nbsp;
                       <Text style={{fontSize: 12, fontWeight: 'normal'}}>
                         Lowest Priced Quotes
                       </Text>

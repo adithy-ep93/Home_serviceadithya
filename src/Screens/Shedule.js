@@ -125,7 +125,7 @@ const Shedule = ({navigation}) => {
   };
 
   return (
-    <View style={{flex: 1, backgroundColor: Colors.backgroundcolor}}>
+    <View style={{ backgroundColor: Colors.backgroundcolor,height:'100%'}}>
       {/* <ScrollView style={{height: 700}}> */}
       {/*header*/}
 
@@ -275,7 +275,7 @@ const Shedule = ({navigation}) => {
           <Text style={txtcolor2}>4pm-5pm</Text>
         </TouchableOpacity>
       </View>
-      <View style={{top: 40, left: '4%', right: '4%'}}>
+      <View style={{ left: '4%', right: '4%',position:'absolute',bottom:90}}>
         <View
           style={{
             flex: 1,
@@ -286,7 +286,7 @@ const Shedule = ({navigation}) => {
             // bottom: 40,
             borderRadius: 15,
 
-            height: 80,
+            height: 80, left: '4%', right: '4%'
           }}>
           <View style={{flexDirection: 'row', left: 20, bottom: 7}}>
             <Text

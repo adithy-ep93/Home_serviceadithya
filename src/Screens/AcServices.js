@@ -32,13 +32,25 @@ const Services = ({navigation}) => {
           />
         </TouchableOpacity>
         <View
-          style={{width: 148, height: 47,  left: '89%'}}>
+          style={{
+            flexDirection: 'row',
+            flex: 1,
+            alignContent: 'center',
+            justifyContent: 'center',
+            top: 8,
+          }}>
           <Image
-            style={{width: 45, height: 45, tintColor: '#fff'}}
-            source={require('../Assets/Images/Home.png')}
+            source={require('../Assets/appbar.png')}
+            style={{
+              tintColor: '#fff',
+              height: 45,
+              width: 45,
+            }}
           />
+          <Text style={{color: '#fff', top: 11, fontWeight: 'bold', left: 6}}>
+            HOME SERVE
+          </Text>
         </View>
-        <Text style={styles.text}>HOME SERVE</Text>
       </View>
 
       <View style={{backgroundColor: Colors.primarycolor}}>
@@ -55,16 +67,20 @@ const Services = ({navigation}) => {
           <View style={styles.banner}>
             <Image
               resizeMode="cover"
-              style={{borderRadius: 16, right: '0.1%', width: '99.6%'}}
+              style={{borderRadius: 16, width: '100%', alignContent:'center',
+              justifyContent:'space-evenly',}}
               source={require('../Assets/Images/Mask5.png')}
             />
             <Text
               style={{
                 fontWeight: 'bold',
                 color: '#FFFFFF',
-                fontSize: 20,
-                left: '27%',
-                bottom: 75,
+                fontSize: 17,
+                textAlign:'center',
+                bottom:'37%',
+               
+                alignContent: 'center',
+                justifyContent: 'center',
               }}>
               AIR CONDITIONER
             </Text>
@@ -72,9 +88,12 @@ const Services = ({navigation}) => {
               style={{
                 fontWeight: 'bold',
                 color: '#FFFFFF',
-                fontSize: 20,
-                left: '27%',
-                bottom: 75,
+                fontSize: 17,
+                textAlign:'center',
+                bottom:'37%',
+               
+                alignContent: 'center',
+                justifyContent: 'center'
               }}>
               SERVICE & REPAIR
             </Text>
@@ -110,7 +129,7 @@ const Services = ({navigation}) => {
           <TouchableOpacity
             style={styles.categorybtn}
             onPress={() => {
-              navigation.navigate('AcServicesub', {head: 'AC SERVICING'});
+              navigation.navigate('AcServicesub', {head: 'AC Servicing'});
             }}>
             <View style={styles.categoryicon}>
               <Image source={require('../Assets/Images/Service.png')} />
@@ -119,7 +138,7 @@ const Services = ({navigation}) => {
           <TouchableOpacity
             style={styles.categorybtn}
             onPress={() => {
-              navigation.navigate('AcServicesub', {head: 'AC REPAIR'});
+              navigation.navigate('AcServicesub', {head: 'AC Repair'});
             }}>
             <View style={styles.categoryicon}>
               <Image source={require('../Assets/Images/Repair.png')} />
@@ -129,7 +148,7 @@ const Services = ({navigation}) => {
             style={styles.categorybtn}
             onPress={() => {
               navigation.navigate('AcServicesub', {
-                head: 'AC INSTALLATION / UNINSTALLATION',
+                head: 'AC Installation / Uninstallation',
               });
             }}>
             <View style={styles.categoryicon}>
@@ -141,7 +160,7 @@ const Services = ({navigation}) => {
           <TouchableOpacity
             style={styles.categorybtn}
             onPress={() => {
-              navigation.navigate('AcServicesub', {head: 'AC GAS CHARGING'});
+              navigation.navigate('AcServicesub', {head: 'AC Gas Charging'});
             }}>
             <View style={styles.categoryicon}>
               <Image source={require('../Assets/Images/Charging.png')} />
@@ -337,13 +356,15 @@ const styles = StyleSheet.create({
     marginRight: 20,
   },
   banner: {
-    width: '95%',
+    width: '97%',
     height: '50%',
-    marginTop: -25,
-    marginLeft: 12,
-    marginRight: 20,
+    flex:1,
+    alignContent:'space-between',
+    justifyContent:'flex-start',
     borderRadius: 16,
-    top: 30,
+    left:'1.3%',
+    top:'3%'
+   
   },
   icon: {
     paddingTop: 13,

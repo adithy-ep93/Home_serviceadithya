@@ -13,24 +13,39 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import Colors from '../config/colors';
 export default Plumbing = ({navigation}) => {
   return (
-    <View style={{backgroundColor: Colors.backgroundcolor}}>
-      <View style={styles.header}>
-        <View style={{flexDirection: 'row'}}>
-          <TouchableOpacity
-            style={{paddingLeft: 20, top: 7}}
-            onPress={() => navigation.goBack(null)}>
-            <AntDesign
-              name="left"
-              size={20}
-              color={Colors.backgroundcolor}></AntDesign>
-          </TouchableOpacity>
-          <Image
-            source={require('../Assets/appbar.png')}
-            style={styles.image}
-          />
-          <Text style={styles.text1}> HOME SERVE </Text>
-        </View>
+    <View style={{flex: 1, backgroundColor: Colors.backgroundcolor}}>
+    <View style={styles.header}>
+      <TouchableOpacity
+        style={{bottom: 5, left: 20}}
+        onPress={() => navigation.goBack()}>
+        <AntDesign
+          style={styles.iconItem}
+          name="left"
+          size={20}
+          color={Colors.backgroundcolor}
+        />
+      </TouchableOpacity>
+      <View
+        style={{
+          flexDirection: 'row',
+          flex: 1,
+          alignContent: 'center',
+          justifyContent: 'center',
+          top: 8,
+        }}>
+        <Image
+          source={require('../Assets/appbar.png')}
+          style={{
+            tintColor: '#fff',
+            height: 45,
+            width: 45,
+          }}
+        />
+        <Text style={{color: '#fff', top: 11, fontWeight: 'bold', left: 6}}>
+          HOME SERVE
+        </Text>
       </View>
+    </View>
       <View
         style={{
           backgroundColor: Colors.primarycolor,
@@ -48,15 +63,22 @@ export default Plumbing = ({navigation}) => {
           <Image
             source={require('../Assets/plumbing/mainImage.png')}
             style={{
-              height: 225,
-              width: 335,
-              left: 11,
-              top: 5,
-              position: 'absolute',
-              borderRadius: 7,
+              borderRadius:16,justifyContent:'space-evenly',width:'96%',alignContent:'center',left:'2%',top:'3%'
             }}
           />
-          <Text style={styles.text2}>PLUMBING WORKS</Text>
+          <Text
+              style={{
+                fontWeight: 'bold',
+                color: '#FFFFFF',
+                fontSize: 18,
+                textAlign:'center',
+                bottom:'15%',
+               
+                alignContent: 'center',
+                justifyContent: 'center',
+              }}>
+              Plumbing Works
+            </Text>
         </View>
         <View style={{left: '4%', right: '4%', top: 15, height: 90}}>
           <TouchableOpacity
@@ -169,9 +191,13 @@ export default Plumbing = ({navigation}) => {
                     height: 70,
                   }}>
                   <Card.Content>
-                    <Title
-                      style={{color: Colors.primarycolor, fontWeight: 'bold'}}>
-                      1
+                  <Title
+                      style={{
+                        color: Colors.primarycolor,
+                        fontWeight: 'bold',
+                        fontSize: 18,
+                      }}>
+                      1&nbsp;
                       <Text style={{fontSize: 12, fontWeight: 'normal'}}>
                         Doorstep Service
                       </Text>
@@ -188,9 +214,13 @@ export default Plumbing = ({navigation}) => {
                     height: 70,
                   }}>
                   <Card.Content>
-                    <Title
-                      style={{color: Colors.primarycolor, fontWeight: 'bold'}}>
-                      2
+                  <Title
+                      style={{
+                        color: Colors.primarycolor,
+                        fontWeight: 'bold',
+                        fontSize: 18,
+                      }}>
+                      2&nbsp;
                       <Text style={{fontSize: 12, fontWeight: 'normal'}}>
                         Experienced, trained, and Background verified Partners
                       </Text>
@@ -207,9 +237,13 @@ export default Plumbing = ({navigation}) => {
                     height: 70,
                   }}>
                   <Card.Content>
-                    <Title
-                      style={{color: Colors.primarycolor, fontWeight: 'bold'}}>
-                      3
+                  <Title
+                      style={{
+                        color: Colors.primarycolor,
+                        fontWeight: 'bold',
+                        fontSize: 18,
+                      }}>
+                      3&nbsp;
                       <Text style={{fontSize: 12, fontWeight: 'normal'}}>
                         Lowest Priced Quotes
                       </Text>
@@ -257,18 +291,11 @@ const styles = StyleSheet.create({
   mainView: {
     backgroundColor: Colors.primarycolor,
     width: '100%',
-    height: 240,
+    height:'27%',
     borderBottomLeftRadius: 15,
     borderBottomRightRadius: 15,
   },
-  text2: {
-    fontWeight: 'bold',
-    color: Colors.backgroundcolor,
-    fontSize: 22,
-    left: 85,
-    top: 160,
-    justifyContent: 'center',
-  },
+ 
   img: {
     tintColor: Colors.primarycolor,
   },

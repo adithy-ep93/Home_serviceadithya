@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import Colors from '../config/colors';
 
-import {Searchbar, Card, Title} from 'react-native-paper';
+import {Searchbar, Card, Divider,Title} from 'react-native-paper';
 
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {Button} from 'react-native';
@@ -49,41 +49,40 @@ export default Fan = ({route,navigation}) => {
   };
 
   return (
-    <View
-      style={{
-        backgroundColor: Colors.backgroundcolor,
-        height: '100%',
-        width: '100%',
-      }}>
-      <View style={styles.header}>
-        <View style={{flexDirection: 'row'}}>
-          <TouchableOpacity
-            style={{paddingLeft: 10, top: 7}}
-            onPress={() => navigation.goBack(null)}>
-            <AntDesign name="left" size={20} color="white"></AntDesign>
-          </TouchableOpacity>
-          <Image
-            source={require('../Assets/appbar.png')}
-            style={{
-              height: 45,
-              width: 45,
-              tintColor: Colors.backgroundcolor,
-              left: 80,
-              top: 4,
-            }}
-          />
-          <Text
-            style={{
-              fontSize: 15,
-              color: Colors.backgroundcolor,
-              fontWeight: 'bold',
-              left: 81,
-              top: 14,
-            }}>
-            HOME SERVE
-          </Text>
-        </View>
+    <View style={{flex: 1, backgroundColor: Colors.backgroundcolor}}>
+    <View style={styles.header}>
+      <TouchableOpacity
+        style={{bottom: 5, left: 20}}
+        onPress={() => navigation.goBack()}>
+        <AntDesign
+          style={styles.iconItem}
+          name="left"
+          size={20}
+          color={Colors.backgroundcolor}
+        />
+      </TouchableOpacity>
+      <View
+        style={{
+          flexDirection: 'row',
+          flex: 1,
+          alignContent: 'center',
+          justifyContent: 'center',
+          top: 8,
+          right:'3%'
+        }}>
+        <Image
+          source={require('../Assets/appbar.png')}
+          style={{
+            tintColor: '#fff',
+            height: 45,
+            width: 45,
+          }}
+        />
+        <Text style={{color: '#fff', top: 11, fontWeight: 'bold', left: 5}}>
+          HOME SERVE
+        </Text>
       </View>
+    </View>
       <View
         style={{
           backgroundColor: Colors.primarycolor,
@@ -150,13 +149,15 @@ export default Fan = ({route,navigation}) => {
             color: Colors.primarycolor,
             fontSize: 16,
             top: 10,
-            left: 7,
+            left: 10,
             fontWeight: 'bold',
-            borderBottomColor: 'rgba(51, 52, 88, 0.06)',
-            borderBottomWidth: 1,
+           
+          
+            
           }}>
           {head} Repair
         </Text>
+        <Divider style={{backgroundColor:'rgba(51, 52, 88, 0.06)', width:'50%' ,left:'2%',top:'4%'}} />
         <View style={{top: 20}}>
           <View View style={{flexDirection: 'row'}}>
             <Text style={styles.textdot}>{'\u2022'}</Text>
@@ -302,7 +303,7 @@ export default Fan = ({route,navigation}) => {
                 <Card.Content>
                   <Title
                     style={{color: Colors.primarycolor, fontWeight: 'bold'}}>
-                    1
+                    1&nbsp;
                     <Text style={{fontSize: 12, fontWeight: 'normal'}}>
                       Highly trained professionals
                     </Text>
@@ -321,7 +322,7 @@ export default Fan = ({route,navigation}) => {
                 <Card.Content>
                   <Title
                     style={{color: Colors.primarycolor, fontWeight: 'bold'}}>
-                    2
+                    2&nbsp;
                     <Text style={{fontSize: 12, fontWeight: 'normal'}}>
                       Experienced, trained, and Background verified Partners
                     </Text>
@@ -340,7 +341,7 @@ export default Fan = ({route,navigation}) => {
                 <Card.Content>
                   <Title
                     style={{color: Colors.primarycolor, fontWeight: 'bold'}}>
-                    3
+                    3&nbsp;
                     <Text style={{fontSize: 12, fontWeight: 'normal'}}>
                       Lowest Priced Quotes
                     </Text>

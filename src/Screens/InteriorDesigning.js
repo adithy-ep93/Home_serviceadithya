@@ -19,33 +19,38 @@ const InteriorDesigning = ({navigation}) => {
   const onChangeSearch = query => setSearchQuery(query);
   return (
     <View style={{flex: 1, backgroundColor: Colors.backgroundcolor}}>
-      
-        <View style={styles.header}>
-          <TouchableOpacity
-            style={{bottom: 5, left: 20}}
-            onPress={() => navigation.goBack(null)}>
-            <AntDesign
-              style={styles.iconItem}
-              name="left"
-              size={20}
-              color={Colors.backgroundcolor}
-            />
-          </TouchableOpacity>
-
-          <View style={{width: 148, height: 70, left: 80}}>
-            <Image
-              style={{
-                width: 45,
-                height: 45,
-                tintColor: '#fff',
-                left: 15,
-                top: 10,
-              }}
-              source={require('../Assets/appbar.png')}
-            />
-          </View>
-          <Text style={styles.text}>HOME SERVE</Text>
-        </View>
+    <View style={styles.header}>
+      <TouchableOpacity
+        style={{bottom: 5, left: 20}}
+        onPress={() => navigation.goBack()}>
+        <AntDesign
+          style={styles.iconItem}
+          name="left"
+          size={20}
+          color={Colors.backgroundcolor}
+        />
+      </TouchableOpacity>
+      <View
+        style={{
+          flexDirection: 'row',
+          flex: 1,
+          alignContent: 'center',
+          justifyContent: 'center',
+          top: 8,
+        }}>
+        <Image
+          source={require('../Assets/appbar.png')}
+          style={{
+            tintColor: '#fff',
+            height: 45,
+            width: 45,
+          }}
+        />
+        <Text style={{color: '#fff', top: 11, fontWeight: 'bold', left: 6}}>
+          HOME SERVE
+        </Text>
+      </View>
+    </View>
         <View style={{backgroundColor: Colors.primarycolor}}>
           <Searchbar
             style={styles.searchStyle}
@@ -59,7 +64,7 @@ const InteriorDesigning = ({navigation}) => {
           <View style={styles.banner}>
             <Image
               //resizeMode="cover"
-              style={{borderRadius: 10,width:'92%',left:'4%',right:'4%'}}
+              style={{borderRadius:16,justifyContent:'space-evenly',width:'97%',alignContent:'center',height:'90%'}}
               source={require('../Assets/interiordesigning/interior.png')}
             />
           </View>
@@ -168,7 +173,7 @@ const InteriorDesigning = ({navigation}) => {
                 <Card.Content>
                   <Title
                     style={{color: Colors.primarycolor, fontWeight: 'bold'}}>
-                    1
+                    1&nbsp;
                     <Text style={{fontSize: 12, fontWeight: 'normal',justifyContent:'center'}}>
                       Highly trained professionals
                     </Text>
@@ -187,7 +192,7 @@ const InteriorDesigning = ({navigation}) => {
                 <Card.Content>
                   <Title
                     style={{color: Colors.primarycolor, fontWeight: 'bold'}}>
-                    2
+                    2&nbsp;
                     <Text style={{fontSize: 12, fontWeight: 'normal'}}>
                       Experienced, trained, and Background verified Partners
                     </Text>
@@ -206,7 +211,7 @@ const InteriorDesigning = ({navigation}) => {
                 <Card.Content>
                   <Title
                     style={{color: Colors.primarycolor, fontWeight: 'bold'}}>
-                    3
+                    3&nbsp;
                     <Text style={{fontSize: 12, fontWeight: 'normal'}}>
                       Lowest Priced Quotes
                     </Text>
@@ -276,6 +281,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginRight: 10,
     marginLeft: 10,
+  
   },
   categoryicon: {
     flex: 1,
@@ -289,12 +295,16 @@ const styles = StyleSheet.create({
     marginRight: 20,
   },
   banner: {
-    width: 345,
-    height: 200,
-    marginTop: 20,
-    marginLeft: 8,
-    // marginRight: 20,
+  
+
+    width: '99%',
+    height: '50%',
+    flex:1,
+    alignContent:'space-between',
+    justifyContent:'flex-start',
     borderRadius: 16,
+    left:'2%',
+    top:'5%'
   },
 
   text: {

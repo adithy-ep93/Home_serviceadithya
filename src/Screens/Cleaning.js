@@ -18,27 +18,38 @@ const Cleaning = ({navigation}) => {
   const onChangeSearch = query => setSearchQuery(query);
   return (
     <View style={{flex: 1, backgroundColor: Colors.backgroundcolor}}>
-      
-        <View style={styles.header}>
-          <TouchableOpacity
-            style={{bottom: 5, left: 20}}
-            onPress={() => navigation.goBack(null)}>
-            <AntDesign
-              style={styles.iconItem}
-              name="left"
-              size={20}
-              color={Colors.backgroundcolor}
-            />
-          </TouchableOpacity>
-
-          <View style={{width: 148, height: 70, left: 90,top:15}}>
-            <Image
-              style={{ width: 45, height: 45, tintColor: '#fff'}}
-              source={require('../Assets/appbar.png')}
-            />
-          </View>
-          <Text style={styles.text}>HOME SERVE</Text>
-        </View>
+    <View style={styles.header}>
+      <TouchableOpacity
+        style={{bottom: 5, left: 20}}
+        onPress={() => navigation.goBack()}>
+        <AntDesign
+          style={styles.iconItem}
+          name="left"
+          size={20}
+          color={Colors.backgroundcolor}
+        />
+      </TouchableOpacity>
+      <View
+        style={{
+          flexDirection: 'row',
+          flex: 1,
+          alignContent: 'center',
+          justifyContent: 'center',
+          top: 8,
+        }}>
+        <Image
+          source={require('../Assets/appbar.png')}
+          style={{
+            tintColor: '#fff',
+            height: 45,
+            width: 45,
+          }}
+        />
+        <Text style={{color: '#fff', top: 11, fontWeight: 'bold', left: 6}}>
+          HOME SERVE
+        </Text>
+      </View>
+    </View>
         <View style={{backgroundColor: Colors.primarycolor,height:58}}>
           <Searchbar
             style={styles.searchStyle}
@@ -52,7 +63,7 @@ const Cleaning = ({navigation}) => {
           <View style={styles.banner}>
             <Image
               resizeMode="cover"
-              style={{borderRadius: 10,width:'92%',left:'4%',right:'4%',position:'absolute'}}
+              style={{borderRadius:16,justifyContent:'space-evenly',width:'48%',alignContent:'center'}}
               source={require('../Assets/cleaning/banner.png')}
             />
           </View>
@@ -171,7 +182,7 @@ const Cleaning = ({navigation}) => {
                   <Card.Content>
                     <Title
                       style={{color: Colors.primarycolor, fontWeight: 'bold'}}>
-                      1
+                      1&nbsp;
                       <Text style={{fontSize: 12, fontWeight: 'normal'}}>
                      Use of Top Quality Specialized and Safe Chemicals.
                       </Text>
@@ -190,7 +201,7 @@ const Cleaning = ({navigation}) => {
                   <Card.Content>
                     <Title
                       style={{color: Colors.primarycolor, fontWeight: 'bold'}}>
-                      2
+                      2&nbsp;
                       <Text style={{fontSize: 12, fontWeight: 'normal'}}>
                         Use of Mechanical and Professional Equipments{' '}
                       </Text>
@@ -209,7 +220,7 @@ const Cleaning = ({navigation}) => {
                   <Card.Content>
                     <Title
                       style={{color: Colors.primarycolor, fontWeight: 'bold'}}>
-                      3
+                      3&nbsp;
                       <Text style={{fontSize: 12, fontWeight: 'normal'}}>
                         Experienced ,Trained and Background Verified Partners
                       </Text>
@@ -316,12 +327,15 @@ const styles = StyleSheet.create({
     marginRight: 20,
   },
   banner: {
-    height: 200,
-    marginTop: 20,
-    marginLeft: 8,
-    // marginRight: 20,
+    height: '50%',
+    
     borderRadius: 16,
-    width:345
+    flex:1,
+    alignContent:'space-between',
+    justifyContent:'space-between',
+    left:'0.9%',
+    top:'3%'
+    
   },
 
   text: {
@@ -339,7 +353,7 @@ const styles = StyleSheet.create({
 
   appbarcontainer: {
     width: '200%',
-    height: 230,
+    height: '28%',
     backgroundColor: Colors.primarycolor,
     borderBottomEndRadius: 15,
     borderBottomStartRadius:15

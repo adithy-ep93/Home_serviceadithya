@@ -326,8 +326,9 @@ const styles = StyleSheet.create({
     top: 70,
     //padding:70,
     height: 140,
-    width: 325,
-    left: 20,
+    width: '90%',
+    left: '5%',
     borderRadius: 10,
+    right:'5%'
   },
 });

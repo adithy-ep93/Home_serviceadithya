@@ -5,7 +5,9 @@ import {
   TouchableOpacity,
   StyleSheet,
   ScrollView,
-  Image,FlatList,StatusBar,
+  Image,
+  FlatList,
+  StatusBar,
 } from 'react-native';
 import {Searchbar, Card, Title} from 'react-native-paper';
 import AntDesign from 'react-native-vector-icons/AntDesign';
@@ -16,8 +18,7 @@ import {color} from 'react-native-reanimated';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import DateTimePicker from '@react-native-community/datetimepicker';
 
-
-import colors from '../config/colors'
+import colors from '../config/colors';
 import Modal from 'react-native-modal';
 const ServiceSummay = ({navigation}) => {
   const [selectedId, setSelectedId] = useState(null);
@@ -60,8 +61,7 @@ const ServiceSummay = ({navigation}) => {
     setModalVisible(!isModalVisible);
   };
 
-
-    // date picker start
+  // date picker start
 
   const [date, setDate] = useState(new Date());
   const [mode, setMode] = useState('date');
@@ -105,63 +105,68 @@ const ServiceSummay = ({navigation}) => {
   const [isSelected, setSelection] = useState(false);
   const [checked, unchecked] = useState(false);
 
-
-
-
-
   return (
-    <View style={{backgroundColor:Colors.backgroundcolor}}>
+    <View style={{backgroundColor: Colors.backgroundcolor}}>
       <View>
         {/*headerview */}
         <View style={styles.header}>
-        <View style={{flexDirection: 'row',top:-20}}>
-          <TouchableOpacity
-            style={{paddingLeft: 20, top: 7}}
-            onPress={() => navigation.goBack(null)}>
-            <AntDesign name="left" size={20} color="white"></AntDesign>
-          </TouchableOpacity>
-          <Image
-            source={require('../Assets/appbar.png')}
-            style={{
-              height: 45,
-              width: 45,
-              tintColor: Colors.backgroundcolor,
-              left: 90,
-              top: 4,
-            }}
-          />
+          <View style={{flexDirection: 'row', top: -20}}>
+            <TouchableOpacity
+              style={{paddingLeft: 20, top: 7}}
+              onPress={() => navigation.goBack(null)}>
+              <AntDesign name="left" size={20} color="white"></AntDesign>
+            </TouchableOpacity>
+            <Image
+              source={require('../Assets/appbar.png')}
+              style={{
+                height: 45,
+                width: 45,
+                tintColor: Colors.backgroundcolor,
+                left: 90,
+                top: 4,
+              }}
+            />
+            <Text
+              style={{
+                fontSize: 15,
+                color: Colors.backgroundcolor,
+                fontWeight: 'bold',
+                // left: 98,
+                top: 4,
+                left:'90%',
+                alignSelf:'center',
+                justifyContent:'center',
+                textAlign:'center'
+              }}>
+              HOME SERVE
+            </Text>
+          </View>
           <Text
             style={{
-              fontSize: 15,
               color: Colors.backgroundcolor,
+              fontSize: 16,
               fontWeight: 'bold',
-              left: 98,
-              top: 14,
+              top: 30,
+              justifyContent: 'flex-start',
+              right: 40,
             }}>
-            HOME SERVE
+            Service Summary
           </Text>
         </View>
-        <Text
-          style={{
-            color: Colors.backgroundcolor,
-            fontSize: 16,
-            fontWeight: 'bold',
-            top: 30,
-            justifyContent: 'flex-start',
-            right: 60,
-          }}>
-          Service Summary
-        </Text>
-      </View>
         {/*headerview ends*/}
       </View>
-      <View style={{backgroundColor: Colors.backgroundcolor, height: '100%',top:20}}>
+      <ScrollView
+        style={{
+          backgroundColor: Colors.backgroundcolor,
+          height: '100%',
+          top: 20,
+        }}>
         {/*first rectangle view starts */}
         <View style={styles.rect1}>
           <Text style={styles.textstyle}>Service Date:</Text>
           <View style={styles.line} />
-          
-           {/** <Text
+
+          {/** <Text
                 style={{
                  color: Colors.secondaryText,
                  padding: 8,
@@ -171,43 +176,31 @@ const ServiceSummay = ({navigation}) => {
             02 April 2021 | 
              </Text> */}
 
-              <Text
-                style={{
-                 color: Colors.secondaryText,
-                 padding: 8,
-                 top: 6,
-                 paddingLeft: 30,
-                }}>
+          <Text
+            style={{
+              color: Colors.secondaryText,
+              padding: 8,
+              top: 6,
+              paddingLeft: 30,
+            }}>
             {' '}
-            {date.getDate()}{' '} | {' '}
-            {monthName}{' '}|{' '}
-            {date.getFullYear()} 
-             </Text>
+            {date.getDate()} | {monthName} | {date.getFullYear()}
+          </Text>
 
+          <TouchableOpacity style={styles.textBox}>
+            {show && (
+              <DateTimePicker
+                testID="dateTimePicker"
+                timeZoneOffsetInMinutes={0}
+                value={date}
+                mode={mode}
+                is24Hour={true}
+                display="calendar"
+                onChange={onChange}
+              />
+            )}
+          </TouchableOpacity>
 
-             
-        <TouchableOpacity style={styles.textBox} >
-          
-          {show && (
-            <DateTimePicker
-              testID="dateTimePicker"
-              timeZoneOffsetInMinutes={0}
-              value={date}
-              mode={mode}
-              is24Hour={true}
-              display="calendar"
-              onChange={onChange}
-            />
-          )}
-        </TouchableOpacity>
-
-
-
-
-
-
-
-         
           <TouchableOpacity
             style={{flexDirection: 'row', left: 250, bottom: 10}}>
             <Text
@@ -216,10 +209,10 @@ const ServiceSummay = ({navigation}) => {
                 fontSize: 15,
                 fontWeight: 'bold',
                 bottom: 11,
-              }}   onPress={showDatepicker}>
+              }}
+              onPress={showDatepicker}>
               Change{' '}
             </Text>
-            
           </TouchableOpacity>
         </View>
 
@@ -236,87 +229,87 @@ const ServiceSummay = ({navigation}) => {
               top: 0,
               paddingLeft: 30,
             }}>
-            {'agthujggddfhss\nsfhkuhhvg\n'}{place}
+            {'agthujggddfhss\nsfhkuhhvg\n'}
+            {place}
           </Text>
           <TouchableOpacity
             style={{flexDirection: 'row', left: 250, bottom: 17}}
-            onPress={()=>{toggleModal()}}
-            
-            
-            >  
-             <Modal
-                    isVisible={isModalVisible}
-                    hasBackdrop={true}
-                    backdropOpacity={0}
-                    style={{
-                      backgroundColor: 'rgba(52, 52, 52, alpha)',
-                      padding: 0,
-                      margin: 0,
-                    }}
-                    onBackdropPress={() => {
-                      toggleModal();
-                    }}>
-                    <View
-                      style={{
-                        backgroundColor: colors.backgroundcolor,
-                        width: '100%',
-                        height: 230,
-                        bottom: -270,
+            onPress={() => {
+              toggleModal();
+            }}>
+            <Modal
+              isVisible={isModalVisible}
+              hasBackdrop={true}
+              backdropOpacity={0}
+              style={{
+                backgroundColor: 'rgba(52, 52, 52, alpha)',
+                padding: 0,
+                margin: 0,
+              }}
+              onBackdropPress={() => {
+                toggleModal();
+              }}>
+              <View
+                style={{
+                  backgroundColor: colors.backgroundcolor,
+                  width: '100%',
+                  height: 230,
+                  bottom: -270,
+                }}>
+                <Text
+                  style={{
+                    color: Colors.primarycolor,
+                    fontWeight: 'bold',
+                    fontSize: 16,
+                    top: 10,
+                    left: 15,
+                  }}>
+                  Choose Your Address
+                </Text>
+
+                <View
+                  style={{
+                    top: 20,
+                    left: 15,
+                    paddingRight: 15,
+                  }}>
+                  {/* <Addressbox /> */}
+
+                  <FlatList
+                    nestedScrollEnabled
+                    horizontal={true}
+                    data={DATA}
+                    renderItem={renderItem}
+                    keyExtractor={item => item.id}
+                    extraData={selectedId}
+                  />
+                  <View>
+                    <TouchableOpacity
+                      style={{flexDirection: 'row'}}
+                      onPress={e => {
+                        navigation.navigate('Addaddress');
                       }}>
+                      <Ionicons
+                        name={'location'}
+                        color={Colors.primarycolor}
+                        size={30}
+                        style={{top: 10, left: 4}}
+                      />
                       <Text
                         style={{
                           color: Colors.primarycolor,
-                          fontWeight: 'bold',
-                          fontSize: 16,
-                          top: 10,
-                          left: 15,
+                          fontSize: 15,
+                          fontWeight: '700',
+                          top: 15,
+                          left: 5,
                         }}>
-                        Choose Your Address
+                        Add an address
                       </Text>
-
-                      <View
-                        style={{
-                          top: 20,
-                          left: 15,
-                          paddingRight: 15,
-                        }}>
-                        {/* <Addressbox /> */}
-
-                        <FlatList
-                          nestedScrollEnabled
-                          horizontal={true}
-                          data={DATA}
-                          renderItem={renderItem}
-                          keyExtractor={item => item.id}
-                          extraData={selectedId}
-                        />
-                        <View>
-                          <TouchableOpacity
-                          style={{flexDirection:'row'}}
-                            onPress={e => {
-                              navigation.navigate('Addaddress');
-                            }}>
-                            <Ionicons
-                              name={'location'}
-                              color={Colors.primarycolor}
-                              size={30}
-                              style={{top: 10, left: 4}}
-                            />
-                            <Text
-                              style={{
-                                color: Colors.primarycolor,
-                                fontSize: 15,
-                                fontWeight: '700',
-                                top: 15,
-                                left: 5,
-                              }}>
-                              Add an address
-                            </Text>
-                          </TouchableOpacity>
-                        </View>
-                      </View>
-                    </View>
-                  </Modal>
+                    </TouchableOpacity>
+                  </View>
+                </View>
+              </View>
+            </Modal>
             <Text
               style={{
                 color: Colors.secondaryText,
@@ -326,16 +319,8 @@ const ServiceSummay = ({navigation}) => {
               }}>
               Change{' '}
             </Text>
-            
           </TouchableOpacity>
         </View>
-
-        
-        
-        
-
-
-
 
         {/*2 rectangle view ends */}
 
@@ -405,83 +390,83 @@ const ServiceSummay = ({navigation}) => {
 
         {/*checkbox */}
 
-        <View style={{flexDirection:'row',top:50,left:20}}>
+        <View style={{flexDirection: 'row', top: 50, left: 20}}>
+          <CheckBox
+            value={isSelected}
+            tintColors={{false: Colors.secondaryText}}
+            onValueChange={setSelection}
+            //status={isSelected ? 'checked' : 'unchecked'}
+            //onPress={()=> {
+            // setSelection(! isSelected);
+            /// }}
+          />
+          <Text style={{margin: 8, color: Colors.secondaryText, right: 6}}>
+            Make payment after service completion{' '}
+          </Text>
+        </View>
 
-              <CheckBox
-                 value={isSelected}
-                 tintColors={{false: Colors.secondaryText}}
-                onValueChange={setSelection}
-                //status={isSelected ? 'checked' : 'unchecked'}
-                //onPress={()=> {
-                   // setSelection(! isSelected);
-               /// }}
-                />
-               <Text style={{margin:8,color:Colors.secondaryText,right:6}}>Make payment after service completion  </Text>
-              
-
-
-            </View>
-
-            <View style={{flexDirection:'row',top:50,left:20}}>
-
-              <CheckBox
-                value={checked}
-                tintColors={{false: Colors.secondaryText}}
-                onValueChange={unchecked}
-                />
-               <Text style={{margin:8,color:Colors.secondaryText,right:6}}>I agree to terms and condition </Text>
-               
-
-
-            </View>
+        <View style={{flexDirection: 'row', top: 50, left: 20}}>
+          <CheckBox
+            value={checked}
+            tintColors={{false: Colors.secondaryText}}
+            onValueChange={unchecked}
+          />
+          <Text style={{margin: 8, color: Colors.secondaryText, right: 6}}>
+            I agree to terms and condition{' '}
+          </Text>
+        </View>
         {/*check box end */}
 
         {/*button */}
 
-        <TouchableOpacity style={{top:50,bottom:20}}  onPress={() => {
-              navigation.navigate('ServiceBooking');
-            }}>
+        <View style={{height:200}}>
+        <TouchableOpacity
+          style={{top: 50, bottom: 20}}
+          onPress={() => {
+            navigation.navigate('ServiceBooking');
+          }}>
           <View style={styles.buttonstyle}>
             {/* <TouchableOpacity onPress={() => {
               navigation.navigate('ServiceBooking');
             }}> */}
-              <Text
-                style={{
-                  color: Colors.backgroundcolor,
-                  fontSize: 18,
-                  fontWeight: 'bold',
-                  alignItems: 'center',
-                  left: 110,
-                  top: 6,
-                }}>
-                Book Service
-              </Text>
+            <Text
+              style={{
+                color: Colors.backgroundcolor,
+                fontSize: 18,
+                fontWeight: 'bold',
+                alignItems: 'center',
+                // left: 110,
+                top: 6,alignSelf:'center'
+              }}>
+              Book Service
+            </Text>
             {/* </TouchableOpacity> */}
           </View>
         </TouchableOpacity>
+        </View>
         {/*button */}
-      </View>
+      </ScrollView>
     </View>
   );
 };
 
 export default ServiceSummay;
 const styles = StyleSheet.create({
-    header: {
-        width: '100%',
-        height: 110,
-        flexDirection: 'row',
-        paddingTop: 1,
-        alignItems: 'center',
-        //padding:2,
-        // paddingLeft:2,
-        elevation: 0,
-        // borderBottomColor:'grey',
-        backgroundColor: Colors.primarycolor,
-        // justifyContent:'center'
-        borderBottomRightRadius: 15,
-        borderBottomStartRadius: 15,
-      },
+  header: {
+    width: '100%',
+    height: 110,
+    flexDirection: 'row',
+    paddingTop: 1,
+    alignItems: 'center',
+    //padding:2,
+    // paddingLeft:2,
+    elevation: 0,
+    // borderBottomColor:'grey',
+    backgroundColor: Colors.primarycolor,
+    // justifyContent:'center'
+    borderBottomRightRadius: 15,
+    borderBottomStartRadius: 15,
+  },
 
   rect1: {
     width: '94%',
@@ -545,7 +530,7 @@ const styles = StyleSheet.create({
     color: Colors.secondaryText,
     //padding:1,
     paddingLeft: 20,
-    bottom:18,
+    bottom: 18,
   },
   text3: {
     fontSize: 15,
@@ -555,20 +540,21 @@ const styles = StyleSheet.create({
     top: 11,
   },
   buttonstyle: {
-    width: 310,
+    width: '92%',
+    left:'4%',right:'4%',
     height: 40,
     backgroundColor: Colors.secondaryText,
     borderRadius: 10,
-    left: 30,
+    // left: 30,
     top: 20,
-    bottom:0
+    bottom: 0,
   },
   text4: {
     color: Colors.secondaryText,
     //padding:1,
     paddingLeft: 20,
-    bottom:18,
-    left:240,
+    bottom: 18,
+    left: 240,
   },
 });
 const DATA = [

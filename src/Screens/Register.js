@@ -165,13 +165,14 @@ const styles = StyleSheet.create({
   },
   textInput: {
     marginTop: 5,
-    width: 320,
+    width: '92%',
     height: 40,
     elevation: 0,
     borderRadius: 7,
     borderWidth: 1,
     borderColor: Colors.secondaryText,
-    left: 20,
+    left: '4%',
+    right:'4%'
     // marginTop: StatusBar.currentHeight || 0,
   },
   button: {
