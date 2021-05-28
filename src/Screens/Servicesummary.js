@@ -419,7 +419,7 @@ const ServiceSummay = ({navigation}) => {
 
         {/*button */}
 
-        <View style={{height:200}}>
+        <View style={{height:290}}>
         <TouchableOpacity
           style={{top: 50, bottom: 20}}
           onPress={() => {

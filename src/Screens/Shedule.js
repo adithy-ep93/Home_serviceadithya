@@ -125,7 +125,7 @@ const Shedule = ({navigation}) => {
   };
 
   return (
-    <View style={{ backgroundColor: Colors.backgroundcolor,height:'100%'}}>
+    <View style={{backgroundColor: Colors.backgroundcolor, height: '100%'}}>
       {/* <ScrollView style={{height: 700}}> */}
       {/*header*/}
 
@@ -151,7 +151,7 @@ const Shedule = ({navigation}) => {
               fontSize: 15,
               color: Colors.backgroundcolor,
               fontWeight: 'bold',
-              justifyContent:'center',
+              justifyContent: 'center',
               left: 75,
               top: 14,
             }}>
@@ -165,8 +165,8 @@ const Shedule = ({navigation}) => {
             fontWeight: 'bold',
             top: 30,
             justifyContent: 'center',
-            alignSelf:'center',
-            textAlign:'center',
+            alignSelf: 'center',
+            textAlign: 'center',
             right: 70,
           }}>
           Schedule your service
@@ -203,7 +203,7 @@ const Shedule = ({navigation}) => {
             {' '}
             {monthName}{' '}
           </Text>
-          <Text style={{textAlign: 'center', top: 11, left:125}}>
+          <Text style={{textAlign: 'center', top: 11, left: 125}}>
             {' '}
             {date.getFullYear()}
           </Text>
@@ -266,7 +266,7 @@ const Shedule = ({navigation}) => {
             <Text style={txtcolor1}>2pm-3pm</Text>
           </TouchableOpacity>
         </View>
-        <View style={{height: 20,width:20,}} />
+        <View style={{height: 20, width: 20}} />
         <TouchableOpacity
           style={color2}
           onPress={() => {
@@ -275,7 +275,7 @@ const Shedule = ({navigation}) => {
           <Text style={txtcolor2}>4pm-5pm</Text>
         </TouchableOpacity>
       </View>
-      <View style={{ left: '4%', right: '4%',position:'absolute',bottom:90}}>
+      <View style={{left: '4%', right: '4%', position: 'absolute', bottom: 90}}>
         <View
           style={{
             flex: 1,
@@ -286,7 +286,9 @@ const Shedule = ({navigation}) => {
             // bottom: 40,
             borderRadius: 15,
 
-            height: 80, left: '4%', right: '4%'
+            height: 80,
+            left: '4%',
+            right: '4%',
           }}>
           <View style={{flexDirection: 'row', left: 20, bottom: 7}}>
             <Text
@@ -487,10 +489,10 @@ const styles = StyleSheet.create({
     marginTop: 5,
     width: 300,
     height: 40,
-    left: 10,
+    // left: 10,
     borderRadius: 7,
     backgroundColor: Colors.continercolor,
-    flexDirection: 'row',
+    flexDirection: 'row',alignSelf:'center'
   },
   innerView: {
     flexDirection: 'row',

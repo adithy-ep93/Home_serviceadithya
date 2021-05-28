@@ -105,7 +105,7 @@ const Profile = ({navigation}) => {
           <TouchableOpacity
             style={{bottom: 120, left: 300}}
             onPress={() => navigation.navigate('userprofile')}>
-            <AntDesign name="right" size={20} color="#DCDCDC" style={{right:10,paddingTop:6}} />
+           <AntDesign name="right" size={20} color="#DCDCDC" style={{paddingTop:6,right:10,}} />
           </TouchableOpacity>
         </TouchableOpacity>
         {/* ends*/}
@@ -176,7 +176,7 @@ const Profile = ({navigation}) => {
            thumbColor={isEnabled ? Colors.primarycolor : '#ececec'}
            onValueChange={toggleSwitch}
            value={isEnabled}
-            style={{position:'relative',left:150}}
+            style={{position:'relative',justifyContent:'flex-end',flex:1}}
           />
         </View>
         </TouchableOpacity>
@@ -278,7 +278,7 @@ const Profile = ({navigation}) => {
             </TouchableOpacity>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => navigation.navigate('About')}
+            onPress={() => navigation.navigate('Login')}
             style={{
               flexDirection: 'row',
               justifyContent: 'space-between',
@@ -367,7 +367,7 @@ const styles = StyleSheet.create({
   flexDirection: 'row',
     top: 12,
     width: '92%',
-    left: '35%',
+    left: '40%',
     right: '4%',
     padding: 3,
     backgroundColor: 'white',

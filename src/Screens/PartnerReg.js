@@ -65,7 +65,7 @@ const PartnerReg = () => {
           style={{
             color: Colors.secondaryText,
             fontWeight: 'bold',
-            left: 27,
+            // left: 27,
             marginTop: 15,
           }}>
           Mobile Number
@@ -75,7 +75,7 @@ const PartnerReg = () => {
           placeholder="9876554321"
           placeholderTextColor="grey"
           underlineColorAndroid="transparent"
-          left={25}
+          // left={25}
           keyboardType="number-pad"
           maxLength={10}
           onChangeText={(num) => setMobileno(num)}></TextInput>
@@ -121,16 +121,21 @@ const styles = StyleSheet.create({
   mainView: {
     flexDirection: 'column',
     top:20,
-    height: 700,
+    height: '100%',
+    width:'92%',
+    right:'4%',
+    left:'4%'
   },
   textInput: {
     marginTop: 5,
-    width: 300,
+    // width: '92%',
     height: 40,
     elevation: 0,
     borderRadius: 7,
     borderWidth: 1,
     borderColor: Colors.secondaryText,
+    // left:'4%',
+    // right:'4%'
   },
   button: {
     backgroundColor: Colors.primarycolor,
@@ -139,8 +144,8 @@ const styles = StyleSheet.create({
     borderRadius: 7,
     justifyContent: 'space-around',
     alignItems: 'center',
-    top: 60,
-    left: 130,
-    elevation: 3,
+    top: 30,
+    // left: 130,
+    elevation: 3,alignSelf:'center'
   },
 });

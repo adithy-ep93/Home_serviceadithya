@@ -53,11 +53,12 @@ const About = ({navigation}) => {
         <Text
           style={{
             color: Colors.secondaryText,
-            left: 20,
+            left: '5%',
             marginTop: 15,
             fontWeight: '400',
             textAlign: 'justify',
-            width: 320,
+            // alignSelf:'center',
+            width: '90%',right:'5%'
           }}>
           Bodhi, played by Patrick Swayze, is part mystic, part criminal, and
           over-all surfer. From clues developed by Pappas, it appears that he
@@ -99,12 +100,13 @@ const styles = StyleSheet.create({
 
     fontWeight: 'bold',
     color: Colors.backgroundcolor,
-    paddingLeft: -3,
+    // paddingLeft: -3,
     top: 5,
   },
   
   mainView: {
     flexDirection: 'column',
-    height: 700,
+    height: '100%',
+    width:'100%'
   },
 });
