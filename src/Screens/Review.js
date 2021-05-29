@@ -15,13 +15,13 @@ import {Rating} from 'react-native-elements';
 
 const Review = ({navigation}) => {
   return (
-    <View style={{flex: 1, backgroundColor: Colors.continercolor}}>
+    <View style={{flex: 1, backgroundColor: Colors.continercolor,height:'100%'}}>
       {/* <ScrollView style={{height: 990}}> */}
       <View>
         {/*headerview */}
         <View style={styles.header}>
           <TouchableOpacity
-            style={{bottom: 5, left: 20, top: 10}}
+            style={{bottom: 15 , left: 20}}
             onPress={() => navigation.goBack()}>
             <AntDesign
               style={styles.iconItem}
@@ -30,29 +30,54 @@ const Review = ({navigation}) => {
               color={Colors.backgroundcolor}
             />
           </TouchableOpacity>
-
-          <View style={{width: 148, height: 47, paddingLeft: 90, top: 10}}>
+          <View
+        style={{
+          flexDirection: 'row',
+          flex: 1,
+          alignContent: 'center',
+          justifyContent: 'center',
+          bottom: 15,
+          left:15
+          // borderBottomLeftRadius:15,
+          // borderBottomRightRadius:15
+        }}>
+        <Image
+          source={require('../Assets/appbar.png')}
+          style={{
+            tintColor: '#fff',
+            height: 45,
+            width: 45,
+          }}
+        />
+        <Text style={{color: '#fff',top:11,  fontWeight: 'bold', left: 6}}>
+          HOME SERVE
+        </Text>
+      </View>
+          {/* <View style={{width: 148, height: 47, paddingLeft: 90, top: 10}}>
             <Image
               style={{width: 45, height: 45, tintColor: '#fff'}}
               source={require('../Assets/Images/Home.png')}
             />
           </View>
           <Text style={styles.text}>HOME SERVE</Text>
-        </View>
-        <View
+        </View> */}
+        {/* <View
           style={{
             backgroundColor: Colors.primarycolor,
             height: 45,
             borderBottomLeftRadius: 15,
             borderBottomEndRadius: 15,
             zIndex: 1,
-          }}>
+          }}> */}
           <Text
             style={{
               alignSelf: 'center',
               fontSize: 14,
               fontWeight: 'bold',
               color: Colors.backgroundcolor,
+              top:20,
+              textAlign:'center',
+              right:140
             }}>
             My Reviews
           </Text>
@@ -78,14 +103,9 @@ const Review = ({navigation}) => {
       <ScrollView>
         <View style={styles.mainView}>
           <View
-            style={{backgroundColor: '#fff', marginTop: 10, borderRadius: 15}}>
+            style={styles.container}>
             <Text
-              style={{
-                color: Colors.secondaryText,
-                fontWeight: '700',
-                left: 27,
-                marginTop: 15,
-              }}>
+              style={styles.txt}>
               Cleaning service
             </Text>
             <Rating
@@ -100,7 +120,7 @@ const Review = ({navigation}) => {
                 color: Colors.secondaryText,
                 fontWeight: '700',
                 // left: 27,
-                marginTop: 15,
+                marginTop: 8,
                 width: 310,
                 // textAlign: 'justify',
                 alignSelf: 'center',
@@ -115,14 +135,9 @@ const Review = ({navigation}) => {
           </View>
 
           <View
-            style={{backgroundColor: '#fff', marginTop: 10, borderRadius: 15}}>
+            style={styles.container}>
             <Text
-              style={{
-                color: Colors.secondaryText,
-                fontWeight: '700',
-                left: 27,
-                marginTop: 15,
-              }}>
+              style={styles.txt}>
               Cleaning service
             </Text>
             <Rating
@@ -151,14 +166,9 @@ const Review = ({navigation}) => {
             </Text>
           </View>
           <View
-            style={{backgroundColor: '#fff', marginTop: 10, borderRadius: 15}}>
+            style={styles.container}>
             <Text
-              style={{
-                color: Colors.secondaryText,
-                fontWeight: '700',
-                left: 27,
-                marginTop: 15,
-              }}>
+              style={styles.txt}>
               Cleaning service
             </Text>
             <Rating
@@ -187,14 +197,9 @@ const Review = ({navigation}) => {
             </Text>
           </View>
           <View
-            style={{backgroundColor: '#fff', marginTop: 10, borderRadius: 15}}>
+            style={styles.container}>
             <Text
-              style={{
-                color: Colors.secondaryText,
-                fontWeight: '700',
-                left: 27,
-                marginTop: 15,
-              }}>
+              style={styles.txt}>
               Cleaning service
             </Text>
             <Rating
@@ -231,9 +236,9 @@ export default Review;
 const styles = StyleSheet.create({
   header: {
     width: '100%',
-    height: 90,
+    height: 120,
     flexDirection: 'row',
-    paddingTop: 1,
+    //top: 1,
     alignItems: 'center',
     //padding:2,
     // paddingLeft:2,
@@ -241,6 +246,8 @@ const styles = StyleSheet.create({
     // borderBottomColor:'grey',
     backgroundColor: Colors.primarycolor,
     // justifyContent:'center'
+    borderBottomRightRadius:15,
+    borderBottomLeftRadius:15
   },
   text: {
     fontSize: 15,
@@ -258,11 +265,11 @@ const styles = StyleSheet.create({
     right: '4%',
     paddingBottom:20
   },
-  mainView: {
-    flexDirection: 'column',
-    height: '100%',
-    width: '92%',
-    left: '4%',
-    right: '4%',paddingBottom:20
+  txt:{
+    color: Colors.secondaryText,
+    fontWeight: '700',
+    left: 10,
+    marginTop: 15,
   },
+  container:{backgroundColor: '#fff', marginTop: 10, borderRadius: 15,width:'98%',left:'1%',right:'1%'},
 });

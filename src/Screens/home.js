@@ -575,6 +575,7 @@ export default Home = ({navigation}) => {
                       startingValue={5}
                       readonly={true}
                       imageSize={10}
+                      style={{left:-25}}
 
                       // style={{paddingVertical: 10}}
                     />
@@ -623,7 +624,7 @@ export default Home = ({navigation}) => {
                       startingValue={5}
                       readonly={true}
                       imageSize={10}
-
+                      style={{left:-25}}
                       // style={{paddingVertical: 10}}
                     />
                   </View>
@@ -670,7 +671,7 @@ export default Home = ({navigation}) => {
                       startingValue={5}
                       readonly={true}
                       imageSize={10}
-
+                      style={{left:-25}}
                       // style={{paddingVertical: 10}}
                     />
                   </View>
